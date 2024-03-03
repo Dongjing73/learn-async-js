@@ -1,7 +1,7 @@
 async function fetchProducts() {
     console.log('Begin fetch ... ');
-        // after this line, our function will wait for the `fetch()` call to be settled
-        // the `fetch()` call will either return a Response or throw an error
+    // after this line, our function will wait for the `fetch()` call to be settled
+    // the `fetch()` call will either return a Response or throw an error
     const response = await fetch(
         "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
     );
@@ -14,9 +14,9 @@ async function fetchProducts() {
     const data = await response.json();
     console.log('response created');
     return data[0].name;
-  }
-  
-  async function main() {
+}
+
+async function main() {
     console.log('Begin main ... ')
     try {
         const productName = await fetchProducts();
@@ -25,7 +25,7 @@ async function fetchProducts() {
     catch(err) {
         console.log(`Failure: ${err.message}`);
     }
-  }
-  main();
-  console.log('End main thread');
+}
+main();
+console.log('End main thread');
   
